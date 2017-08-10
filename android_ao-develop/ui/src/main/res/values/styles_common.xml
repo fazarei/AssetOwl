@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="AssetOwl" />
+
+    <style name="AssetOwl.Text">
+        <item name="android:textSize">@dimen/common_text_size</item>
+    </style>
+    <style name="AssetOwl.Text.Large">
+        <item name="android:textSize">@dimen/common_text_size_large</item>
+    </style>
+    <style name="AssetOwl.Text.Large.Bold">
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="AssetOwl.Text.Large.White">
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+    <style name="AssetOwl.Text.Medium">
+        <item name="android:textSize">@dimen/common_text_size_medium</item>
+    </style>
+    <style name="AssetOwl.Text.Medium.White">
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+
+    <style name="AssetOwl.Layout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+    <style name="AssetOwl.Layout.MatchWidthAndWrapHeight">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="AssetOwl.Layout.MatchWidthAndMatchHeight">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+    <style name="AssetOwl.Layout.WrapWidthAndWrapHeight">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="AssetOwl.Layout.LinearLayout" parent="AssetOwl.Layout.MatchWidthAndMatchHeight">
+        <item name="android:orientation">horizontal</item>
+    </style>
+    <style name="AssetOwl.Layout.LinearLayout.Vertical" parent="AssetOwl.Layout.LinearLayout">
+        <item name="android:orientation">vertical</item>
+    </style>
+    <style name="AssetOwl.Layout.LinearLayout.Vertical.NoPadding" parent="AssetOwl.Layout.LinearLayout.Vertical">
+        <item name="android:padding">0dp</item>
+    </style>
+
+    <style name="AssetOwl.Button" />
+    <style name="AssetOwl.Button.Large" parent="Widget.AppCompat.Button.Colored">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/common_button_height_large</item>
+        <item name="android:textSize">@dimen/common_text_size_medium</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="AssetOwl.EditText" parent="AssetOwl.Layout.MatchWidthAndWrapHeight">
+        <item name="android:textSize">@dimen/common_text_size_medium</item>
+    </style>
+
+    <style name="AssetOwl.ImageView.ScaleToParentWidthAndAdjustBounds" parent="AssetOwl.Layout.MatchWidthAndWrapHeight">
+        <item name="android:adjustViewBounds">true</item>
+        <item name="android:scaleType">fitCenter</item>
+    </style>
+
+    <style name="AssetOwl.ImageView">
+        <item name="android:contentDescription" />
+    </style>
+
+    <style name="AssetOwl.ErrorText">
+        <item name="android:textColor">@color/color_error_message</item>
+        <item name="android:fontFamily">@string/roboto_regular</item>
+        <item name="android:textSize">@dimen/txt_no_connectivity_size</item>
+    </style>
+</resources>

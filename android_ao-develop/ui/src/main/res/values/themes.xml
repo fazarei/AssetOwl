@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--<style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:actionBarTabTextStyle">@style/ActionBarTitle</item>
+    </style>-->
+
+    <style name="ActionBarTitle" parent="android:Widget.TextView">
+        <item name="android:fontFamily">@string/roboto_regular</item>
+        <item name="android:textColor">@color/toolbar_title_splash</item>
+        <item name="android:textSize">@dimen/txt_no_connectivity_size</item>
+        <item name="android:paddingLeft">10dp</item>
+    </style>
+
+    <style name="button_background" parent="Widget.AppCompat.Button.Colored">
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/button_height</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:textSize">@dimen/button_text_size</item>
+        <item name="android:background">@drawable/button_background</item>
+        <item name="android:fontFamily">@string/roboto_regular_medium</item>
+    </style>
+
+    <style name="NavDrawerTextStyle" parent="Base.TextAppearance.AppCompat">
+        <item name="android:textColor">@color/colorTextHeader</item>
+        <item name="android:textSize">@dimen/text_title_medium</item>
+        <item name="android:fontFamily">@string/roboto_regular_medium</item>
+        <item name="android:background">@color/nav_background</item>
+    </style>
+
+</resources>

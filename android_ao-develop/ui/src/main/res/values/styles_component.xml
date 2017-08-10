@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="AssetOwl.Component" />
+
+    <style name="AssetOwl.Component.ActionBar">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/action_bar_height</item>
+        <item name="android:background">@color/colorActionBarBackground</item>
+    </style>
+
+    <style name="AssetOwl.Component.ActionBar.Logo" parent="AssetOwl.ImageView">
+        <item name="android:layout_width">@dimen/action_bar_logo_width</item>
+        <item name="android:layout_height">@dimen/action_bar_logo_height</item>
+        <item name="android:layout_marginStart">@dimen/action_bar_child_margin_start_end</item>
+        <item name="android:layout_alignParentStart">true</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:src">@drawable/logo_with_text_horizontal</item>
+        <item name="android:scaleType">fitCenter</item>
+    </style>
+
+    <style name="AssetOwl.Component.ActionBar.Title">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_alignParentEnd">true</item>
+        <item name="android:layout_alignBottom">@id/action_bar_logo</item>
+        <item name="android:layout_marginEnd">@dimen/action_bar_child_margin_start_end</item>
+        <item name="android:textSize">@dimen/text_title_small</item>
+        <item name="android:textColor">@color/colorActionBarText</item>
+    </style>
+
+    <style name="AssetOwl.Component.LoginForm">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">@dimen/login_form_padding</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+    <style name="AssetOwl.Component.LoginEditText" parent="AssetOwl.EditText">
+        <item name="android:maxLines">1</item>
+    </style>
+    <style name="AssetOwl.Component.LoginTextInputLayout" parent="AssetOwl.Layout.MatchWidthAndWrapHeight">
+        <item name="android:layout_height">@dimen/login_text_input_layout_height</item>
+        <item name="android:layout_marginTop">@dimen/login_text_input_layout_margin_top_bottom</item>
+    </style>
+    <style name="AssetOwl.Component.TemplatesList.Header" parent="AssetOwl.Layout.LinearLayout">
+        <item name="android:layout_height">@dimen/list_header_height</item>
+        <item name="android:background">@color/colorBackgroundTableHeader</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+    <style name="AssetOwl.Component.TemplatesList.Header.TextView">
+        <item name="android:textColor">@color/colorTextHeader</item>
+        <item name="android:textSize">@dimen/text_title_medium</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="AssetOwl.Component.TemplatesList.Row" parent="AssetOwl.Layout.LinearLayout">
+        <item name="android:layout_height">@dimen/list_header_height</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+    <style name="AssetOwl.Component.TemplatesList.Row.TextView">
+        <item name="android:textColor">@color/colorTextHeader</item>
+        <item name="android:textSize">@dimen/text_title_medium</item>
+    </style>
+
+    <style name="AssetOwl.Component.ListHeader" />
+    <style name="AssetOwl.Component.ListHeader.AppBar" parent="AssetOwl.Layout.MatchWidthAndWrapHeight">
+    </style>
+
+    <style name="AssetOwl.Component.ListHeader.Tab">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/my_audits_tabs_height</item>
+        <item name="android:background">#F5F5F5</item>
+    </style>
+
+    <style name="AssetOwl.Component.ListHeader.Layout" parent="AssetOwl.Layout.MatchWidthAndWrapHeight">
+        <item name="android:layout_height">@dimen/list_header_height</item>
+        <item name="android:background">@color/colorBackgroundTableHeader</item>
+    </style>
+
+    <style name="AssetOwl.Component.ListHeader.TextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/colorTextHeader</item>
+        <item name="android:textSize">@dimen/text_title_medium</item>
+        <item name="android:layout_centerVertical">true</item>
+    </style>
+
+    <style name="AssetOwl.Component.ListHeader.Tab.Item.TextView" parent="@android:style/TextAppearance.Widget.TextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/selector_tabitem</item>
+    </style>
+
+    <style name="AssetOwl.Component.ListHeader.Tab.Item" />
+
+    <style name="AssetOwl.Component.List" parent="AssetOwl.Layout">
+        <item name="android:scrollbars">vertical</item>
+        <item name="android:background">@color/colorListBackground</item>
+    </style>
+
+    <style name="AssetOwl.Component.WelcomeCard" parent="AssetOwl.Layout.MatchWidthAndMatchHeight">
+        <item name="android:layout_marginTop">@dimen/welcome_card_margin_top</item>
+        <item name="android:layout_marginRight">@dimen/welcome_card_margin_right</item>
+        <item name="android:layout_marginBottom">@dimen/welcome_card_margin_bottom</item>
+        <item name="android:layout_marginLeft">@dimen/welcome_card_margin_left</item>
+        <item name="android:layout_gravity">center_horizontal|bottom</item>
+        <item name="android:background">@color/colorWelcomeCardBackground</item>
+    </style>
+
+    <style name="AssetOwl.Component.WelcomeCard.TextWelcomeToAssetOwl" parent="@android:style/TextAppearance.Widget.TextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_alignParentLeft">true</item>
+        <item name="android:layout_alignParentTop">true</item>
+        <item name="android:layout_marginTop">@dimen/welcome_card_welcome_to_assetowl_margin_top</item>
+        <item name="android:layout_marginLeft">@dimen/welcome_card_welcome_to_assetowl_margin_left</item>
+        <item name="android:textSize">@dimen/welcome_card_welcome_to_assetowl_text_size</item>
+        <item name="android:textColor">@color/colorWelcomeCardText</item>
+    </style>
+
+    <style name="AssetOwl.Component.WelcomeCard.TextWouldYouLikeTo" parent="@android:style/TextAppearance.Widget.TextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_alignLeft">@+id/welcome_text_welcome_to_assetowl</item>
+        <item name="android:layout_below">@+id/welcome_text_welcome_to_assetowl</item>
+        <item name="android:layout_marginTop">@dimen/welcome_card_would_you_like_to_margin_top</item>
+        <item name="android:textSize">@dimen/welcome_card_text_size</item>
+        <item name="android:textColor">@color/colorWelcomeCardText</item>
+    </style>
+
+    <style name="AssetOwl.Component.WelcomeCard.TextStart" parent="@android:style/TextAppearance.Widget.TextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_toRightOf">@+id/welcome_text_would_you_like_to</item>
+        <item name="android:layout_alignBaseline">@+id/welcome_text_would_you_like_to</item>
+        <item name="android:textSize">@dimen/welcome_card_text_size</item>
+        <item name="android:textColor">@color/colorAccent</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="AssetOwl.Component.WelcomeCard.TextANewAudit" parent="@android:style/TextAppearance.Widget.TextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_toRightOf">@+id/welcome_text_start</item>
+        <item name="android:layout_alignBaseline">@+id/welcome_text_start</item>
+        <item name="android:layout_marginTop">@dimen/welcome_card_a_new_audit_margin_top</item>
+        <item name="android:textSize">@dimen/welcome_card_text_size</item>
+        <item name="android:textColor">@color/colorWelcomeCardText</item>
+    </style>
+
+    <style name="AssetOwl.Component.WelcomeCard.Arrow">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_marginLeft">@dimen/welcome_card_arrow_margin_left</item>
+        <item name="android:layout_marginTop">@dimen/welcome_card_arrow_margin_top</item>
+        <item name="android:layout_marginBottom">@dimen/welcome_card_arrow_margin_bottom</item>
+        <item name="android:layout_marginRight">@dimen/welcome_card_arrow_margin_right</item>
+        <item name="android:layout_alignLeft">@+id/welcome_text_start</item>
+        <item name="android:layout_below">@+id/welcome_text_would_you_like_to</item>
+    </style>
+
+    <style name="AssetOwl.Component.FAB">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">bottom|right</item>
+        <item name="android:layout_margin">@dimen/fab_margin</item>
+        <item name="android:src">@drawable/ic_add_white</item>
+    </style>
+
+    <style name="AssetOwl.Component.Spinner.Large" parent="@android:style/Widget.Holo.Light.ProgressBar.Large">
+        <item name="android:layout_width">@dimen/spinner_size</item>
+        <item name="android:layout_height">@dimen/spinner_size</item>
+        <item name="android:layout_marginTop">@dimen/spinner_margin_top</item>
+    </style>
+
+    <style name="AssetOwl.Component.Spinner.Text" parent="@android:style/TextAppearance.Widget.TextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/progress_bar_text_margin_top</item>
+        <item name="android:textSize">@dimen/spinner_text_size</item>
+        <item name="android:textColor">@color/colorSpinnerText</item>
+    </style>
+
+    <style name="AssetOwl.Component.Spinner" />
+
+</resources>

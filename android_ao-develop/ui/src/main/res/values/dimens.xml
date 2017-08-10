@@ -1,0 +1,101 @@
+<resources>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <dimen name="txt_no_connectivity_margin_top">32dp</dimen>
+    <dimen name="txt_no_connectivity_margin_side">16dp</dimen>
+    <dimen name="txt_no_connectivity_height">24dp</dimen>
+    <dimen name="txt_no_connectivity_size">16sp</dimen>
+    <dimen name="img_no_connctivity_margin_top">30dp</dimen>
+    <dimen name="toolbar_height">56dp</dimen>
+    <dimen name="button_text_size">16sp</dimen>
+    <dimen name="button_exit_margin_top">40dp</dimen>
+    <dimen name="button_margin_side">16dp</dimen>
+    <dimen name="button_height">36dp</dimen>
+    <dimen name="button_corner">3dp</dimen>
+    <dimen name="toolbar_padding_side">16dp</dimen>
+    <dimen name="toolbar_splash_object_height">30dp</dimen>
+    <dimen name="toolbar_text_size">12sp</dimen>
+    <dimen name="toolbar_text_padding_right">10dp</dimen>
+    <dimen name="no_wifi_icon_width">24dp</dimen>
+    <dimen name="toolbar_icon_width">140dp</dimen>
+
+    <dimen name="activity_no_margin">0dp</dimen>
+    <dimen name="rounded_corner_large">8dp</dimen>
+    <dimen name="rounded_corner_small">4dp</dimen>
+    <dimen name="common_text_size">14sp</dimen>
+    <dimen name="common_text_size_medium">16sp</dimen>
+    <dimen name="common_text_size_large">21sp</dimen>
+    <dimen name="common_button_height_large">48dp</dimen>
+
+    <dimen name="login_button_login_margin_top">20dp</dimen>
+    <dimen name="login_text_input_layout_margin_top_bottom">5dp</dimen>
+    <dimen name="login_text_input_layout_height">90dp</dimen>
+    <dimen name="login_form_padding">16dp</dimen>
+
+    <dimen name="text_title_small">12sp</dimen>
+    <dimen name="action_bar_height">56dp</dimen>
+    <dimen name="action_bar_logo_height">30dp</dimen>
+    <dimen name="action_bar_logo_width">140dp</dimen>
+    <dimen name="action_bar_child_margin_start_end">16dp</dimen>
+    <dimen name="txt_error_message_margin_top">30dp</dimen>
+    <dimen name="nav_header_height">172dp</dimen>
+    <dimen name="floating_app_bar_margin">10dp</dimen>
+    <dimen name="nav_header_text">14sp</dimen>
+    <dimen name="text_title_medium">14sp</dimen>
+    <dimen name="text_title_large">24sp</dimen>
+    <dimen name="nav_header_text_margin_left">16dp</dimen>
+    <dimen name="list_header_height">24dp</dimen>
+    <dimen name="templates_list_column_width_selector">60dp</dimen>
+    <dimen name="templates_list_column_width_id">40dp</dimen>
+    <dimen name="templates_list_column_width_questions">80dp</dimen>
+    <dimen name="audit_list_column_width">70dp</dimen>
+
+    <dimen name="frame_layout_padding_top">30dp</dimen>
+    <dimen name="nav_heade_margin_left">16dp</dimen>
+    <dimen name="nav_heade_margin_top">40dp</dimen>
+    <dimen name="profile_image_size">64dp</dimen>
+    <dimen name="profile_font_size">30sp</dimen>
+    <dimen name="username_header_margin_top">20dp</dimen>
+
+    <dimen name="my_audits_tabs_height">72dp</dimen>
+    <dimen name="app_bar_layout_elevation">0dp</dimen>
+    <dimen name="list_header_leftcolumn_margin_left">24dp</dimen>
+    <dimen name="list_header_rightcolumn_margin_right">28dp</dimen>
+    <dimen name="tab_layout_indicator_height">0dp</dimen>
+    <dimen name="tab_item_title_text_margin_top">-2dp</dimen>
+    <dimen name="welcome_card_margin_top">134dp</dimen>
+    <dimen name="welcome_card_margin_right">30dp</dimen>
+    <dimen name="welcome_card_margin_bottom">88dp</dimen>
+    <dimen name="welcome_card_margin_left">30dp</dimen>
+    <dimen name="welcome_card_welcome_to_assetowl_margin_top">17dp</dimen>
+    <dimen name="welcome_card_welcome_to_assetowl_margin_left">20dp</dimen>
+    <dimen name="welcome_card_welcome_to_assetowl_text_size">20sp</dimen>
+    <dimen name="welcome_card_would_you_like_to_margin_top">20dp</dimen>
+    <dimen name="welcome_card_text_size">16sp</dimen>
+    <dimen name="welcome_card_a_new_audit_margin_top">20dp</dimen>
+    <dimen name="welcome_card_arrow_margin_left">20dp</dimen>
+    <dimen name="welcome_card_arrow_margin_top">8dp</dimen>
+    <dimen name="welcome_card_arrow_margin_bottom">10dp</dimen>
+    <dimen name="welcome_card_arrow_margin_right">20dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="spinner_text_size">16sp</dimen>
+    <dimen name="spinner_size">86dp</dimen>
+    <dimen name="spinner_margin_top">40dp</dimen>
+    <dimen name="progress_bar_text_margin_top">35dp</dimen>
+    <dimen name="toolbar_shadow">4dp</dimen>
+    <dimen name="toolbar_template_text_size">20sp</dimen>
+    <dimen name="button_padding">16dp</dimen>
+    <dimen name="drawable_padding">6dp</dimen>
+    <dimen name="template_list_row_height">88dp</dimen>
+    <dimen name="icon_visibility_size">28dp</dimen>
+    <dimen name="margin_small">8dp</dimen>
+    <dimen name="template_list_row_width">250dp</dimen>
+    <dimen name="divider_height">1.5dp</dimen>
+    <dimen name="status_bar_height">24dp</dimen>
+    <dimen name="templateList_viewpager_margin_top">48dp</dimen>
+    <dimen name="template_list_margin_side">16dp</dimen>
+    <dimen name="checkbox_margin_right">32dp</dimen>
+    <dimen name="template_list_margin_right">56dp</dimen>
+
+</resources>

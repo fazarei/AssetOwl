@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="AssetOwl.Component.Spinner.Large" parent="@android:style/Widget.Material.Light.ProgressBar.Large">
+        <item name="android:layout_width">@dimen/spinner_size</item>
+        <item name="android:layout_height">@dimen/spinner_size</item>
+        <item name="android:layout_marginTop">@dimen/spinner_margin_top</item>
+    </style>
+</resources>
