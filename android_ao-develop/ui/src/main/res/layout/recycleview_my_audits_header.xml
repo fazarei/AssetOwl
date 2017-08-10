@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/AssetOwl.Component.TemplatesList.Header">
+
+    <TextView
+        android:id="@+id/txt_id"
+        android:layout_width="@dimen/audit_list_column_width"
+        android:layout_height="wrap_content"
+        android:text="@string/id"
+        style="@style/AssetOwl.Component.TemplatesList.Header.TextView"/>
+
+    <TextView
+        android:id="@+id/txt_name"
+        android:layout_width="@dimen/audit_list_column_width"
+        android:layout_height="wrap_content"
+        android:text="@string/name"
+        style="@style/AssetOwl.Component.TemplatesList.Header.TextView"/>
+
+
+    <TextView
+        android:id="@+id/txt_properties"
+        android:layout_width="@dimen/audit_list_column_width"
+        android:layout_height="wrap_content"
+        android:text="@string/properties"
+        style="@style/AssetOwl.Component.TemplatesList.Header.TextView"/>
+
+    <TextView
+        android:id="@+id/txt_answer"
+        android:layout_width="@dimen/audit_list_column_width"
+        android:layout_height="wrap_content"
+        android:text="@string/answer"
+        style="@style/AssetOwl.Component.TemplatesList.Header.TextView"/>
+
+    <TextView
+        android:id="@+id/txtstatus"
+        android:layout_width="@dimen/audit_list_column_width"
+        android:layout_height="wrap_content"
+        android:text="@string/status"
+        style="@style/AssetOwl.Component.TemplatesList.Header.TextView"/>
+
+
+</LinearLayout>
