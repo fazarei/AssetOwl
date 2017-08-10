@@ -1,0 +1,210 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+
+    dependencies {
+        classpath "com.neenbedankt.gradle.plugins:android-apt:${rootProject.ext.androidAptVersion}"
+        classpath "org.jacoco:org.jacoco.core:${rootProject.ext.jacocoVersion}"
+    }
+}
+
+
+apply plugin: 'com.android.application'
+apply plugin: 'com.neenbedankt.android-apt'
+apply plugin: 'me.tatarka.retrolambda'
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+
+
+    defaultConfig {
+        applicationId "com.assetowl.android.ui"
+        minSdkVersion rootProject.ext.minSDK
+        targetSdkVersion rootProject.ext.targetSDK
+        versionCode rootProject.getVersionCode()
+        versionName rootProject.getVersionName()
+        setProperty("archivesBaseName", "AssetOwl-$versionName")
+
+        testApplicationId rootProject.ext.testApplicationId
+        testInstrumentationRunner "com.assetowl.android.ui.cucumber.runner.CucumberRunner"
+        manifestPlaceholders = [app_label: "@string/app_name"]
+        multiDexEnabled true
+
+
+        multiDexEnabled true
+
+    }
+    sourceSets {
+        androidTest {
+            assets.srcDirs = ['src/androidTest/assets']
+        }
+        androidTestDev {
+            assets.srcDirs = ['src/androidTestDev/assets']
+        }
+        androidTestStub {
+            assets.srcDirs = ['src/androidTestStub/assets']
+        }
+        androidTestProd {
+            assets.srcDirs = ['src/androidTestProd/assets']
+        }
+        main { assets.srcDirs = ['src/main/assets'] }
+    }
+
+    packagingOptions {
+        exclude 'LICENSE.txt'
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/ASL2.0'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/services/javax.annotation.processing.Processor'
+        exclude 'META-INF/maven/com.google.guava/guava/pom.properties'
+        exclude 'META-INF/maven/com.google.guava/guava/pom.xml'
+        exclude 'META-INF/maven/com.google.dagger/dagger/pom.properties'
+        exclude 'META-INF/maven/com.google.dagger/dagger/pom.xml'
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    lintOptions {
+        quiet true
+        abortOnError false
+        ignoreWarnings true
+        htmlReport true
+        xmlReport true
+        htmlOutput file("$buildDir/reports/lint/lint-reports.html")
+        xmlOutput file("$buildDir/reports/lint/lint-reports.xml")
+        disable 'InvalidPackage'
+        disable 'OldTargetApi'
+        disable 'IconDensities'
+        disable 'IconMissingDensityFolder'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            buildConfigField 'String', 'TEST_TAGS', '"'+getTestTags()+'"'
+            buildConfigField 'String', 'TEST_FEATURES', '"'+getTestFeatures()+'"'
+        }
+    }
+
+    productFlavors {
+//        common settings
+        def NETWORKING_TIMEOUT = "10" // seconds
+
+//        dev flavor settings
+        def DEV_BACKEND_URL = "https://test.assetowl.com/"
+        def DEV_INTERCOM_API_KEY = "android_sdk-fb53b08924b80d205d3b004c351f474dd4159dd9"
+        def DEV_INTERCOM_APP_ID = "i6e2hv1t"
+        def DEV_HOCKEY_APP_ID = "aa6354efc4114e6b95a577e040c5861a"
+        def DEV_GCM_SENDER_FOR_INTERCOM = "919500590186"
+
+//        prod flavor settings
+        def PROD_BACKEND_URL = "https://test.assetowl.com/" // need to be changed then
+        def PROD_INTERCOM_API_KEY = "android_sdk-fb53b08924b80d205d3b004c351f474dd4159dd9" // need to be changed then
+        def PROD_INTERCOM_APP_ID = "i6e2hv1t" // need to be changed then
+        def PROD_GCM_SENDER_FOR_INTERCOM = "919500590186" // need to be changed then
+
+//        stub flavor settings
+        def STUB_HOCKEY_APP_ID = "60f860c52aa7432e8706e8ce0500a7c8"
+
+        stub {
+            manifestPlaceholders = [app_label: "@string/app_name_stub", hockeyapp_app_id: STUB_HOCKEY_APP_ID]
+            applicationIdSuffix ".stub"
+            buildConfigField "String", "BACKEND_URL", "\"http://assetowl.mockbackend/\""
+            buildConfigField "long", "NETWORKING_TIMEOUT", "2"
+            buildConfigField "String", "INTERCOM_API_KEY", "\"" + DEV_INTERCOM_API_KEY + "\""
+            buildConfigField "String", "INTERCOM_APP_ID", "\"" + DEV_INTERCOM_APP_ID + "\""
+            resValue "string", "intercom_gcm_sender_id", ""
+        }
+        dev {
+            manifestPlaceholders = [app_label: "@string/app_name_dev", hockeyapp_app_id: DEV_HOCKEY_APP_ID]
+            applicationIdSuffix ".dev"
+            buildConfigField "String", "BACKEND_URL", "\"" + DEV_BACKEND_URL + "\""
+            buildConfigField "long", "NETWORKING_TIMEOUT", NETWORKING_TIMEOUT
+            buildConfigField "String", "INTERCOM_API_KEY", "\"" + DEV_INTERCOM_API_KEY + "\""
+            buildConfigField "String", "INTERCOM_APP_ID", "\"" + DEV_INTERCOM_APP_ID + "\""
+            resValue "string", "intercom_gcm_sender_id", DEV_GCM_SENDER_FOR_INTERCOM
+        }
+        prod {
+            manifestPlaceholders = [app_label: "@string/app_name", hockeyapp_app_id: ""]
+            buildConfigField "String", "BACKEND_URL", "\"" + PROD_BACKEND_URL + "\""
+            buildConfigField "long", "NETWORKING_TIMEOUT", NETWORKING_TIMEOUT
+            buildConfigField "String", "INTERCOM_API_KEY", "\"" + PROD_INTERCOM_API_KEY + "\""
+            buildConfigField "String", "INTERCOM_APP_ID", "\"" + PROD_INTERCOM_APP_ID + "\""
+            resValue "string", "intercom_gcm_sender_id", PROD_GCM_SENDER_FOR_INTERCOM
+        }
+    }
+    testOptions {
+        unitTests.returnDefaultValues = true
+    }
+}
+
+dependencies {
+    apt "com.google.dagger:dagger-compiler:${rootProject.ext.daggerVesion}"
+    compile "com.google.dagger:dagger:${rootProject.ext.daggerVesion}"
+    provided 'javax.annotation:jsr250-api:1.0'
+
+//    compile project(path: ':mvp')
+    compile project(path: ':mvp-android')
+    compile project(path: ':domain')
+    compile project(path: ':data') // Have to add for dependency injection
+
+    compile "com.android.support:support-annotations:${rootProject.ext.androidSupport}"
+    compile "com.android.support:appcompat-v7:${rootProject.ext.androidSupport}"
+    compile "com.android.support:design:${rootProject.ext.androidSupport}"
+    compile "com.jakewharton:butterknife:${rootProject.ext.butterknifeVersion}"
+    compile 'org.jetbrains:annotations-java5:15.0'
+
+    compile "com.squareup.okhttp3:okhttp:${rootProject.ext.okHttpVersion}"
+    compile "com.squareup.retrofit2:retrofit:${rootProject.ext.retrofitVersion}"
+    compile "com.google.code.gson:gson:${rootProject.ext.gsonVersion}"
+
+    androidTestCompile("com.android.support.test.espresso:espresso-core:${rootProject.ext.espressoVersion}") {
+        exclude module: 'support-annotations'
+        exclude module: 'recyclerview-v7'
+    }
+
+    androidTestCompile("com.android.support.test.espresso:espresso-contrib:${rootProject.ext.espressoContribVersion}") {
+        exclude group: 'com.android.support', module: 'appcompat'
+        exclude group: 'com.android.support', module: 'support-v4'
+        exclude module: 'support-annotations'
+        exclude module: 'recyclerview-v7'
+    }
+
+    androidTestCompile("com.android.support.test.espresso:espresso-intents:${rootProject.ext.espressoVersion}") {
+        exclude module: 'support-annotations'
+        exclude module: 'recyclerview-v7'
+    }
+    androidTestCompile("info.cukes:cucumber-android:${rootProject.ext.cucumberVersion}") {
+        exclude group: 'com.google.guava'
+        exclude module: 'cucumber-jvm-deps'
+    }
+    androidTestCompile("info.cukes:cucumber-picocontainer:${rootProject.ext.cucumberVersion}") {
+        exclude module: 'cucumber-jvm-deps'
+    }
+    androidTestCompile "info.cukes:cucumber-jvm-deps:${rootProject.ext.cucumberJvmDepsVersion}"
+    androidTestCompile("com.schibsted.spain:barista:${rootProject.ext.baristaVersion}") {
+        exclude group: 'com.android.support'
+    }
+
+    testCompile "junit:junit:${rootProject.ext.junitVersion}"
+    testCompile "org.mockito:mockito-core:${rootProject.ext.mockitoVersion}"
+
+
+    testCompile "org.powermock:powermock-module-junit4:${rootProject.ext.powerMockVersion}"
+    testCompile "org.powermock:powermock-api-mockito2:${rootProject.ext.powerMockVersion}"
+
+    compile "com.github.pwittchen:reactivenetwork:${rootProject.ext.reactiveNetworkVersion}"
+    compile "io.intercom.android:intercom-sdk:${rootProject.ext.intercomeVersion}"
+    compile "net.hockeyapp.android:HockeySDK:${rootProject.ext.hockeyappVersion}"
+}
