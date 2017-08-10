@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center">
+    <TextView
+        android:id="@+id/tabitem_text_count"
+        style="@style/AssetOwl.Component.ListHeader.Tab.Item.TextView"
+        android:textSize="@dimen/text_title_large"/>
+    <TextView
+        android:id="@+id/tabitem_text_title"
+        style="@style/AssetOwl.Component.ListHeader.Tab.Item.TextView"
+        android:textSize="@dimen/text_title_medium"
+        android:layout_marginTop="@dimen/tab_item_title_text_margin_top"/>
+</LinearLayout>

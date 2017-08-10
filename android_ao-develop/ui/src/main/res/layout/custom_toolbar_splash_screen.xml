@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/toolbar_height"
+    android:background="@color/toolbar_primary_splash"
+    android:paddingRight="@dimen/toolbar_padding_side"
+    android:paddingLeft="@dimen/toolbar_padding_side"
+    android:gravity="center_vertical"
+    tools:context=".ui.launch.LaunchActivity">
+
+    <ImageView
+        android:id="@+id/img_perm_scan_wifi"
+        android:layout_width="@dimen/no_wifi_icon_width"
+        android:layout_height="@dimen/toolbar_splash_object_height"
+        android:src="@drawable/ic_perm_scan_wifi"
+        android:layout_alignParentRight="true"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/toolbar_splash_object_height"
+        android:text="No internet"
+        android:textColor="@color/toolbar_text"
+        android:id="@+id/textView"
+        android:layout_alignTop="@+id/img_perm_scan_wifi"
+        android:layout_toStartOf="@+id/img_perm_scan_wifi"
+        android:gravity="bottom"
+        android:paddingRight="@dimen/toolbar_text_padding_right"
+        android:fontFamily="@string/roboto_regular"
+        android:textSize="@dimen/toolbar_text_size"/>
+
+    <ImageView
+        android:layout_width="@dimen/toolbar_icon_width"
+        android:layout_height="@dimen/toolbar_splash_object_height"
+        android:src="@drawable/logo_with_text_horizontal"
+        android:id="@+id/imageView"
+        android:layout_alignTop="@+id/textView"
+        android:layout_alignParentStart="true" />
+
+</RelativeLayout>

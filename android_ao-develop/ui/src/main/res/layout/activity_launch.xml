@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include android:id="@+id/tool_bar"
+    layout="@layout/custom_toolbar_splash_screen"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/ic_cloud_off_black"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/img_no_connctivity_margin_top"/>
+
+    <TextView
+        android:id="@+id/txt_no_connectivity_first_line"
+        android:text="@string/assetowl_needs_internet_connection_to_work"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/txt_no_connectivity_height"
+        android:layout_marginTop="@dimen/txt_no_connectivity_margin_top"
+        android:layout_marginRight="@dimen/txt_no_connectivity_margin_side"
+        android:layout_marginLeft="@dimen/txt_no_connectivity_margin_side"
+        android:textSize="@dimen/txt_no_connectivity_size"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center_horizontal"
+        android:textColor="@color/color_txt_connectivity"
+        android:fontFamily="@string/roboto_regular" />
+
+    <TextView
+        android:id="@+id/txt_no_connectivity_second_line"
+        android:text="@string/please_connect_to_the_internet_and_try_again"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/txt_no_connectivity_height"
+        android:layout_marginRight="@dimen/txt_no_connectivity_margin_side"
+        android:layout_marginLeft="@dimen/txt_no_connectivity_margin_side"
+        android:textSize="@dimen/txt_no_connectivity_size"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center_horizontal"
+        android:textColor="@color/color_txt_connectivity"
+        android:fontFamily="@string/roboto_regular"/>
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/button_exit"
+        style="@style/button_background"
+        android:text="@string/exit_assetowl"
+        android:layout_marginTop="@dimen/button_exit_margin_top"
+        android:layout_marginRight="@dimen/button_margin_side"
+        android:layout_marginLeft="@dimen/button_margin_side"
+        />
+
+</LinearLayout>

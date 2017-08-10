@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/AssetOwl.Layout.LinearLayout.Vertical"
+    android:background="@color/colorActionBarBackground"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_view_templates_properties_audits_list"
+        android:scrollbars="vertical"
+        style="@style/AssetOwl.Layout" />
+
+</RelativeLayout>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true">
+
+        <include
+            android:id="@+id/tool_bar_template"
+            layout="@layout/custom_toolbar_template"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/action_bar_height" />
+        />
+        <Button
+            android:id="@+id/btn_next"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/action_bar_height"
+            android:text="Next"
+            android:drawableRight="@drawable/ic_droid_chevron_right_disabled"
+            android:gravity="right|center"
+            android:background="@color/transparent"
+            android:layout_gravity="start"
+            android:textSize="@dimen/button_text_size"
+            android:paddingRight="@dimen/button_padding"
+            android:drawablePadding="@dimen/drawable_padding"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:enabled="false" />
+
+
+        <com.assetowl.android.ui.component.viewpager.NonSwipeableViewPager
+            android:id="@+id/create_audit_workflow_viewpager"
+            style="@style/AssetOwl.Layout"
+            android:layout_above="@+id/btn_next"
+            android:layout_below="@+id/tool_bar_template"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+
+</RelativeLayout>

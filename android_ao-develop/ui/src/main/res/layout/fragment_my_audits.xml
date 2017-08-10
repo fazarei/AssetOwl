@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/AssetOwl.Layout.LinearLayout.Vertical">
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/list_header_app_bar_layout"
+        style="@style/AssetOwl.Component.ListHeader.AppBar"
+        app:elevation="@dimen/app_bar_layout_elevation">
+        <com.assetowl.android.ui.component.tabbar.AuditStatusFilterTabBar
+            android:id="@+id/my_audits_tabs"
+            style="@style/AssetOwl.Component.ListHeader.Tab"
+            app:tabIndicatorHeight="@dimen/tab_layout_indicator_height"
+            app:layout_scrollFlags="scroll|snap|enterAlways"
+            app:tabGravity="fill"/>
+        <RelativeLayout
+            android:id="@+id/my_audits_list_header"
+            style="@style/AssetOwl.Component.ListHeader.Layout">
+            <TextView
+                style="@style/AssetOwl.Component.ListHeader.TextView"
+                android:text="@string/text_audits"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="@dimen/list_header_leftcolumn_margin_left"/>
+            <TextView
+                android:id="@+id/my_audits_list_header_date"
+                style="@style/AssetOwl.Component.ListHeader.TextView"
+                android:text="@string/text_new"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/list_header_rightcolumn_margin_right"/>
+        </RelativeLayout>
+    </android.support.design.widget.AppBarLayout>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycle_view_my_audits_list"
+        style="@style/AssetOwl.Component.List"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+
+    <RelativeLayout
+        android:id="@+id/my_audits_welcome_card"
+        android:visibility="gone"
+        style="@style/AssetOwl.Component.WelcomeCard">
+        <TextView
+            android:id="@+id/welcome_text_welcome_to_assetowl"
+            style="@style/AssetOwl.Component.WelcomeCard.TextWelcomeToAssetOwl"
+            android:text="@string/welcome_to_assetowl"/>
+        <TextView
+            android:id="@+id/welcome_text_would_you_like_to"
+            style="@style/AssetOwl.Component.WelcomeCard.TextWouldYouLikeTo"
+            android:text="@string/would_you_like_to"/>
+        <TextView
+            android:id="@+id/welcome_text_start"
+            style="@style/AssetOwl.Component.WelcomeCard.TextStart"
+            android:text="@string/start_with_spaces"/>
+        <TextView
+            style="@style/AssetOwl.Component.WelcomeCard.TextANewAudit"
+            android:text="@string/a_new_audit"/>
+        <ImageView
+            style="@style/AssetOwl.Component.WelcomeCard.Arrow"
+            android:src="@drawable/ic_arrow_of_love" />
+    </RelativeLayout>
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/my_audits_button_create_audit"
+        style="@style/AssetOwl.Component.FAB"
+        android:clickable="true" />
+</android.support.design.widget.CoordinatorLayout>
