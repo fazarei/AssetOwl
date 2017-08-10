@@ -1,0 +1,44 @@
+apply plugin: 'com.android.library'
+apply plugin: 'com.neenbedankt.android-apt'
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.minSDK
+        targetSdkVersion rootProject.ext.targetSDK
+        versionCode rootProject.getVersionCode()
+        versionName rootProject.getVersionName()
+        multiDexEnabled true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    dexOptions {
+        dexInProcess true
+    }
+
+    lintOptions {
+        abortOnError false
+        disable 'InvalidPackage','SdCardPath'
+    }
+}
+dependencies {
+
+    compile project(path: ':mvp-android')
+
+    compile "io.reactivex:rxjava:${rootProject.ext.rxJavaVersion}"
+    compile "io.reactivex:rxandroid:${rootProject.ext.rxAndroidVersion}"
+
+    compile "com.squareup.retrofit2:adapter-rxjava:${retrofitVersion}"
+
+    testCompile "junit:junit:${rootProject.ext.junitVersion}"
+    testCompile "org.mockito:mockito-core:${rootProject.ext.mockitoVersion}"
+
+    testCompile "org.powermock:powermock-module-junit4:${rootProject.ext.powerMockVersion}"
+    testCompile "org.powermock:powermock-api-mockito2:${rootProject.ext.powerMockVersion}"
+}
